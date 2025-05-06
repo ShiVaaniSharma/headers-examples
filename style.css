@@ -1,0 +1,312 @@
+/* --- Base Page Styling & Showcase Structure --- */
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f0f4f8;
+    color: #1a202c;
+    line-height: 1.6;
+}
+
+.showcase-section {
+    margin: 40px 20px 70px;
+    /* border: 1px solid #cbd5e0; --- Optional: Keep a very light border for separation or remove entirely */
+    /* background-color: #fff; --- Optional: Keep for visual grouping or remove */
+    /* box-shadow: 0 8px 25px rgba(0,0,0,0.08); --- Optional: Keep for visual grouping or remove */
+    border-radius: 10px;
+    overflow: hidden; /* Still good to keep for headers with rounded corners */
+}
+
+/* MODIFIED: H2 styling for showcase section titles - made plain */
+.showcase-section h2 {
+    /* background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%); -- REMOVED */
+    /* color: #ffffff; -- REMOVED, will inherit from body or be black */
+    padding: 15px 20px; /* Reduced padding for plain text */
+    margin: 0 0 15px 0; /* Add some bottom margin to separate from header */
+    font-size: 1.3em;   /* Slightly smaller for plain text */
+    font-weight: 600;
+    text-align: center; /* Center the title above the header */
+    font-family: 'Poppins', sans-serif;
+    /* border-bottom: none; -- REMOVED */
+}
+
+/* REMOVED: .logo-placeholder and .logo-placeholder.dark-bg styles */
+/* The .logo-area div will still exist in HTML, but you'll place an <img> tag directly inside it. */
+/* You'll need to style your actual <img> tag for size, etc. or it will be its natural size. */
+/* Example:
+   .logo-area img {
+       max-height: 50px;
+       width: auto;
+       display: block;
+   }
+*/
+
+
+/* --- Global Variables --- */
+:root {
+    --g-primary-blue: #007bff; --g-dark-blue: #004a99; --g-light-blue: #e7f3ff;
+    --g-accent-blue: #2a9fd6; --g-text-color: #333333; --g-light-text: #ffffff;
+    --g-border-color: #e0e0e0;
+    /* Modern Palette */
+    --sharp-blue: #0052D4; --electric-blue: #00C6FF; --vibrant-accent: #FF416C;
+    --graphite: #2D3748; --silver-lining: #E2E8F0; --pure-white: #FFFFFF;
+    /* New Palette additions for Styles 15-17 */
+    --deep-ocean-start: #000428; --deep-ocean-end: #004E92; --gold-accent: #FFD700;
+    --soft-glow: rgba(255, 215, 0, 0.3); --muted-bg: #F4F7F6; --charcoal-text: #36454F;
+    --active-teal: #14B8A6; --inset-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* --- Style 1: Clean Underline Indicator --- */
+#header-style-1 {
+    --primary-blue: var(--g-primary-blue); --text-color: var(--g-text-color);
+    background-color: var(--pure-white); box-shadow: 0 2px 4px rgba(0,0,0,0.05); padding: 0 2%;
+}
+#header-style-1 .header-container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; height:80px; }
+#header-style-1 .logo-area img { max-height: 50px; width: auto; display: block; } /* Basic image styling */
+#header-style-1 .main-navigation ul { list-style:none; padding:0; margin:0; display:flex; }
+#header-style-1 .main-navigation ul li a { display:block; padding:28px 18px; color:var(--text-color); text-decoration:none; font-weight:500; position:relative; transition:color .3s ease; border-bottom:4px solid transparent; }
+#header-style-1 .main-navigation ul li a:hover { color:var(--primary-blue); }
+#header-style-1 .main-navigation ul li.theme-menu-selected a { color:var(--primary-blue); font-weight:700; border-bottom-color:var(--primary-blue); }
+
+/* --- Style 2: Dark Background & Active Highlight --- */
+#header-style-2 {
+    --dark-blue: var(--g-dark-blue); --light-text: var(--g-light-text); --accent-blue: var(--g-accent-blue);
+    background-color: var(--dark-blue); padding: 0 2%;
+}
+#header-style-2 .header-container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; height:70px; }
+#header-style-2 .logo-area img { max-height: 45px; width: auto; display: block; filter: brightness(0) invert(1); } /* Example: Invert logo for dark BG */
+#header-style-2 .main-navigation ul { list-style:none; padding:0; margin:0; display:flex; }
+#header-style-2 .main-navigation ul li a { display:block; padding:10px 18px; margin:10px 3px; color:var(--light-text); text-decoration:none; font-weight:500; border-radius:50px; transition:background-color .3s ease, color .3s ease; }
+#header-style-2 .main-navigation ul li a:hover { background-color:rgba(255,255,255,.1); color:var(--light-text); }
+#header-style-2 .main-navigation ul li.theme-menu-selected a { background-color:var(--accent-blue); color:var(--light-text); font-weight:700; }
+
+/* --- Style 3: Subtle Background & Vivid Active Tab --- */
+#header-style-3 {
+    --primary-blue: var(--g-primary-blue); --light-blue-bg: #f8faff; --text-color: var(--g-text-color);
+    background-color: var(--light-blue-bg); border-bottom: 1px solid #ddeaff; padding: 0 2%;
+}
+#header-style-3 .header-container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; height:75px; }
+#header-style-3 .logo-area img { max-height: 50px; width: auto; display: block; }
+#header-style-3 .main-navigation ul { list-style:none; padding:0; margin:0; display:flex; height:100%; }
+#header-style-3 .main-navigation ul li { display:flex; align-items:center; }
+#header-style-3 .main-navigation ul li a { display:flex; align-items:center; height:100%; padding:0 20px; margin:0 2px; color:var(--text-color); text-decoration:none; font-weight:500; border-bottom:3px solid transparent; transition:color .3s ease, border-color .3s ease, background-color .3s ease; }
+#header-style-3 .main-navigation ul li a:hover { color:var(--primary-blue); }
+#header-style-3 .main-navigation ul li.theme-menu-selected a { color:var(--primary-blue); font-weight:700; border-bottom-color:var(--primary-blue); background-color:var(--pure-white); }
+
+/* ... (Styles 4 through 17 follow, ensure each .logo-area img has basic styling if needed) ... */
+
+/* --- Style 4: Gradient Background & Active Glow --- */
+#header-style-4 {
+    --dark-blue: var(--g-dark-blue); --accent-blue: var(--g-accent-blue); --light-text: var(--g-light-text);
+    background: linear-gradient(to right, var(--dark-blue), var(--accent-blue)); padding: 0 2%;
+    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+}
+#header-style-4 .header-container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; height:70px; }
+#header-style-4 .logo-area img { max-height: 45px; width: auto; display: block; filter: brightness(0) invert(1); }
+#header-style-4 .main-navigation ul { list-style:none; padding:0; margin:0; display:flex; }
+#header-style-4 .main-navigation ul li a { display:block; padding:25px 18px; color:var(--light-text); text-decoration:none; font-weight:500; position:relative; transition:color .3s ease, text-shadow .3s ease; }
+#header-style-4 .main-navigation ul li a:hover { color:rgba(255,255,255,.8); }
+#header-style-4 .main-navigation ul li.theme-menu-selected a { color:var(--pure-white); font-weight:700; text-shadow:0 0 8px rgba(255,255,255,.7); }
+
+/* --- Style 5: Minimalist Border & Active Dot Indicator --- */
+#header-style-5 {
+    --primary-blue: var(--g-primary-blue); --text-color: var(--g-text-color); --border-color: var(--g-border-color);
+    background-color: var(--pure-white); border-top: 3px solid var(--primary-blue);
+    border-bottom: 1px solid var(--border-color); padding: 0 2%;
+}
+#header-style-5 .header-container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; height:75px; }
+#header-style-5 .logo-area img { max-height: 50px; width: auto; display: block; }
+#header-style-5 .main-navigation ul { list-style:none; padding:0; margin:0; display:flex; }
+#header-style-5 .main-navigation ul li a { display:flex; align-items:center; padding:28px 18px; color:var(--text-color); text-decoration:none; font-weight:500; position:relative; transition:color .3s ease; }
+#header-style-5 .main-navigation ul li a:hover { color:var(--primary-blue); }
+#header-style-5 .main-navigation ul li.theme-menu-selected a { color:var(--primary-blue); font-weight:700; }
+#header-style-5 .main-navigation ul li.theme-menu-selected a::before { content:'●'; color:var(--primary-blue); font-size:.6em; margin-right:8px; }
+
+/* --- Style 6: Floating Active Pill with Shadow --- */
+#header-style-6 {
+    --primary-blue: var(--g-primary-blue); --light-text: var(--g-light-text); --text-color: var(--g-text-color);
+    background-color: #f7f9fc; padding: 0 2%; border-bottom: 1px solid #e8edf3;
+}
+#header-style-6 .header-container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; height:80px; position:relative; padding-top: 5px; padding-bottom: 5px; }
+#header-style-6 .logo-area img { max-height: 50px; width: auto; display: block; }
+#header-style-6 .main-navigation ul { list-style:none; padding:0; margin:0; display:flex; }
+#header-style-6 .main-navigation ul li { position:relative; }
+#header-style-6 .main-navigation ul li a { display:block; padding:15px 18px; margin:0 5px; color:var(--text-color); text-decoration:none; font-weight:500; transition:color .3s ease; border-radius:8px; }
+#header-style-6 .main-navigation ul li a:hover { color:var(--primary-blue); }
+#header-style-6 .main-navigation ul li.theme-menu-selected a { background-color:var(--primary-blue); color:var(--light-text); font-weight:700; border-radius:8px; box-shadow:0 4px 12px rgba(0,123,255,.3); transform:translateY(-3px); z-index:1; }
+
+/* --- Style 7: Angled/Sheared Active Background --- */
+#header-style-7 {
+    --primary-blue: var(--g-primary-blue); --light-text: var(--g-light-text); --text-color: var(--g-text-color);
+    background-color: var(--pure-white); padding: 0 2%; overflow: hidden; border-bottom: 1px solid #eee;
+}
+#header-style-7 .header-container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; height:70px; }
+#header-style-7 .logo-area img { max-height: 45px; width: auto; display: block; }
+#header-style-7 .main-navigation ul { list-style:none; padding:0; margin:0; display:flex; }
+#header-style-7 .main-navigation ul li { margin:0 2px; position:relative; }
+#header-style-7 .main-navigation ul li a { display:block; padding:25px 20px; color:var(--text-color); text-decoration:none; font-weight:500; position:relative; z-index:1; transition:color .3s ease; }
+#header-style-7 .main-navigation ul li a:hover { color:var(--primary-blue); }
+#header-style-7 .main-navigation ul li.theme-menu-selected a { color:var(--light-text); font-weight:700; }
+#header-style-7 .main-navigation ul li.theme-menu-selected::before { content:""; position:absolute; top:5px; bottom:5px; left:-10px; right:-10px; background-color:var(--primary-blue); transform:skewX(-20deg); z-index:0; border-radius:4px; }
+
+/* --- Style 8: Gradient Text Active Item --- */
+#header-style-8 {
+    --primary-blue: var(--g-primary-blue); --accent-blue: var(--g-accent-blue); --text-color: var(--g-text-color);
+    background-color: var(--pure-white); box-shadow: 0 1px 3px rgba(0,0,0,0.08); padding: 0 2%;
+}
+#header-style-8 .header-container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; height:75px; }
+#header-style-8 .logo-area img { max-height: 50px; width: auto; display: block; }
+#header-style-8 .main-navigation ul { list-style:none; padding:0; margin:0; display:flex; }
+#header-style-8 .main-navigation ul li a { display:block; padding:28px 18px; color:var(--text-color); text-decoration:none; font-weight:600; transition:color .3s ease; font-size:1.05em; }
+#header-style-8 .main-navigation ul li a:hover { color:var(--primary-blue); }
+#header-style-8 .main-navigation ul li.theme-menu-selected a { background:linear-gradient(to right, var(--primary-blue), var(--accent-blue)); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:700; }
+@supports not (-webkit-background-clip: text) and (not (background-clip: text)) {
+    #header-style-8 .main-navigation ul li.theme-menu-selected a { color:var(--primary-blue); background:none; }
+}
+
+/* --- Style 9: "Neon Flux" Active Tab --- */
+@keyframes neonFlux {
+    0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--neon-color1), 0 0 20px var(--neon-color1), 0 0 25px var(--neon-color1); }
+    50% { text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px var(--neon-color2), 0 0 25px var(--neon-color2), 0 0 30px var(--neon-color2); }
+}
+#header-style-9 {
+    --neon-color1: #F400F5; --neon-color2: #00E5FF; --deep-space-bg: #0A051A; --light-text: var(--g-light-text);
+    background-color: var(--deep-space-bg); padding: 0 2%; border-bottom: 2px solid var(--neon-color1);
+}
+#header-style-9 .header-container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; height:70px; }
+#header-style-9 .logo-area img { max-height: 45px; width: auto; display: block; filter: brightness(0) invert(1); }
+#header-style-9 .main-navigation ul { list-style:none; padding:0; margin:0; display:flex; }
+#header-style-9 .main-navigation ul li a { display:block; padding:25px 18px; color:rgba(255,255,255,.7); text-decoration:none; font-weight:600; font-size:1.05em; transition:color .3s ease, text-shadow .3s ease; letter-spacing:.5px; }
+#header-style-9 .main-navigation ul li a:hover { color:var(--light-text); }
+#header-style-9 .main-navigation ul li.theme-menu-selected a { color:var(--light-text); font-weight:700; animation:neonFlux 2s ease-in-out infinite; outline:1px dashed rgba(255,255,255,.3); outline-offset:3px; }
+
+/* --- Style 10: "Origami Fold" Active Tab --- */
+#header-style-10 {
+    --canvas-bg: #f5f5f5; --primary-art: #FF6B6B; --secondary-art: #4ECDC4; --shadow-art: rgba(0,0,0,.1); --text-color: var(--g-text-color);
+    background-color: var(--canvas-bg); padding: 10px 2% 0; border-bottom: 1px solid #ddd;
+}
+#header-style-10 .header-container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; height:70px; }
+#header-style-10 .logo-area img { max-height: 45px; width: auto; display: block; }
+#header-style-10 .main-navigation ul { list-style:none; padding:0; margin:0; display:flex; }
+#header-style-10 .main-navigation ul li { position:relative; margin:0 5px; }
+#header-style-10 .main-navigation ul li a { display:block; padding:20px 15px; color:var(--text-color); text-decoration:none; font-weight:500; transition:color .3s ease; position:relative; z-index:2; }
+#header-style-10 .main-navigation ul li a:hover { color:var(--primary-art); }
+#header-style-10 .main-navigation ul li.theme-menu-selected a { color:var(--pure-white); font-weight:600; }
+#header-style-10 .main-navigation ul li.theme-menu-selected::before,
+#header-style-10 .main-navigation ul li.theme-menu-selected::after { content:""; position:absolute; height:100%; width:100%; background-color:var(--primary-art); z-index:1; transition:transform .3s ease-out; }
+#header-style-10 .main-navigation ul li.theme-menu-selected::before { top:0; left:0; border-radius:6px 6px 0 0; box-shadow:0 -3px 8px var(--shadow-art); }
+#header-style-10 .main-navigation ul li.theme-menu-selected::after { background-color:var(--secondary-art); top:4px; left:4px; border-radius:6px; z-index:0; filter:brightness(.8); }
+#header-style-10 .main-navigation ul li.theme-menu-selected:hover::before { transform:translateY(-3px); }
+#header-style-10 .main-navigation ul li.theme-menu-selected:hover::after { transform:translate(2px, 2px); }
+
+/* --- Style 11: "Dynamic Stripe & Split Text" Active Tab --- */
+@keyframes stripeSlide {
+    0% { width:0%; left:0%; } 50% { width:100%; left:0%; } 100% { width:0%; left:100%; }
+}
+#header-style-11 {
+    --dynamic-bg: var(--pure-white); --dynamic-text: #2c3e50; --active-text-color: #e74c3c;
+    --active-text-color-bottom: #3498db; --stripe-color: var(--active-text-color);
+    background-color: var(--dynamic-bg); padding: 0 2%; border-bottom: 1px solid #ecf0f1; box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
+#header-style-11 .header-container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; height:75px; }
+#header-style-11 .logo-area img { max-height: 50px; width: auto; display: block; }
+#header-style-11 .main-navigation ul { list-style:none; padding:0; margin:0; display:flex; }
+#header-style-11 .main-navigation ul li { position:relative; }
+#header-style-11 .main-navigation ul li a { display:block; padding:28px 20px; color:var(--dynamic-text); text-decoration:none; font-weight:600; font-size:1.1em; position:relative; overflow:hidden; transition:color .3s ease; }
+#header-style-11 .main-navigation ul li a:hover { color:var(--active-text-color); }
+#header-style-11 .main-navigation ul li a::after { content:""; position:absolute; bottom:0; height:3px; background-color:var(--stripe-color); width:0; left:50%; transition:width .3s ease, left .3s ease; }
+#header-style-11 .main-navigation ul li a:hover::after { width:100%; left:0; }
+#header-style-11 .main-navigation ul li.theme-menu-selected a { color:transparent; }
+#header-style-11 .main-navigation ul li.theme-menu-selected a::after { width:100%; left:0; animation:stripeSlide 3s linear infinite .5s; }
+#header-style-11 .main-navigation ul li.theme-menu-selected a > span { position:relative; display:block; }
+#header-style-11 .main-navigation ul li.theme-menu-selected a > span::before,
+#header-style-11 .main-navigation ul li.theme-menu-selected a > span::after { content:attr(data-text); position:absolute; top:0; left:0; width:100%; overflow:hidden; font-weight:700; }
+#header-style-11 .main-navigation ul li.theme-menu-selected a > span::before { color:var(--active-text-color); height:50%; border-bottom:1px dashed rgba(0,0,0,.2); }
+#header-style-11 .main-navigation ul li.theme-menu-selected a > span::after { color:var(--active-text-color-bottom); top:50%; height:50%; }
+
+/* --- Style 12: "Aurora Edge" Active Tab --- */
+@keyframes auroraEdgeAnimation {
+     0%,100% { border-image-source: linear-gradient(to bottom right, var(--electric-blue), var(--sharp-blue), var(--vibrant-accent)); }
+     25% { border-image-source: linear-gradient(to bottom right, var(--vibrant-accent), var(--electric-blue), var(--sharp-blue)); }
+     50% { border-image-source: linear-gradient(to bottom right, var(--sharp-blue), var(--vibrant-accent), var(--electric-blue)); }
+     75% { border-image-source: linear-gradient(to bottom right, var(--electric-blue), var(--vibrant-accent), var(--sharp-blue)); }
+}
+#header-style-12 {
+     background-color: var(--pure-white); padding: 0 2%; border-bottom: 1px solid var(--silver-lining);
+}
+#header-style-12 .header-container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; height:80px; }
+#header-style-12 .logo-area img { max-height: 50px; width: auto; display: block; }
+#header-style-12 .main-navigation ul { list-style:none; padding:0; margin:0; display:flex; }
+#header-style-12 .main-navigation ul li a { display:block; padding:20px 22px; margin:0 3px; color:var(--graphite); text-decoration:none; font-weight:600; font-size:1.05em; position:relative; border:3px solid transparent; border-radius:8px; transition:color .3s ease, background-color .3s ease; }
+#header-style-12 .main-navigation ul li a:hover { color:var(--sharp-blue); background-color:rgba(0,198,255,.05); }
+#header-style-12 .main-navigation ul li.theme-menu-selected a { color:var(--sharp-blue); font-weight:700; border-image-slice:1; border-image-width:3px; animation:auroraEdgeAnimation 8s linear infinite; border-color:var(--electric-blue); /* Fallback */ box-shadow:0 0 15px rgba(0,198,255,.2); }
+
+/* --- Style 13: "Segmented Highlight" Active Tab --- */
+#header-style-13 {
+     background-color: var(--silver-lining); padding: 0 2%; position: relative;
+}
+#header-style-13 .header-container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; height:75px; }
+#header-style-13 .logo-area img { max-height: 50px; width: auto; display: block; }
+#header-style-13 .main-navigation ul { list-style:none; padding:0; margin:0; display:flex; }
+#header-style-13 .main-navigation ul li { position:relative; margin:0 1px; }
+#header-style-13 .main-navigation ul li a { display:block; padding:27px 20px; color:var(--graphite); text-decoration:none; font-weight:500; font-size:1em; transition:color .3s ease, background-color .3s ease; background-color:transparent; position:relative; z-index:1; }
+#header-style-13 .main-navigation ul li a:hover { color:var(--sharp-blue); }
+#header-style-13 .main-navigation ul li.theme-menu-selected a { color:var(--pure-white); background-color:var(--sharp-blue); font-weight:700; border-radius:6px 6px 0 0; }
+#header-style-13 .main-navigation ul li.theme-menu-selected::before,
+#header-style-13 .main-navigation ul li.theme-menu-selected::after { content:""; position:absolute; background-color:var(--sharp-blue); height:5px; bottom:-5px; z-index:0; transition:width .3s ease-out; }
+#header-style-13 .main-navigation ul li.theme-menu-selected::before { left:0; width:30%; border-radius:0 0 0 5px; }
+#header-style-13 .main-navigation ul li.theme-menu-selected::after { right:0; width:30%; border-radius:0 0 5px 0; }
+#header-style-13 .main-navigation ul li.theme-menu-selected:hover::before,
+#header-style-13 .main-navigation ul li.theme-menu-selected:hover::after { width:50%; }
+
+/* --- Style 14: "Reflective Depth" Active Tab --- */
+#header-style-14 {
+    --reflection-bg: linear-gradient(135deg, #0A1931 0%, #182747 100%);
+    background: var(--reflection-bg); padding: 0 2%; box-shadow: inset 0 -5px 15px rgba(0,0,0,0.3);
+}
+#header-style-14 .header-container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; height:85px; }
+#header-style-14 .logo-area img { max-height: 50px; width: auto; display: block; filter: brightness(0) invert(1); }
+#header-style-14 .main-navigation ul { list-style:none; padding:0; margin:0; display:flex; }
+#header-style-14 .main-navigation ul li a { display:block; padding:32px 20px; color:rgba(255,255,255,.75); text-decoration:none; font-weight:500; font-size:1.05em; transition:color .3s ease, text-shadow .3s ease; position:relative; text-shadow:0 1px 2px rgba(0,0,0,.2); }
+#header-style-14 .main-navigation ul li a:hover { color:var(--pure-white); }
+#header-style-14 .main-navigation ul li.theme-menu-selected a { color:var(--pure-white); font-weight:700; text-shadow:0 0 10px var(--electric-blue), 0 0 20px var(--electric-blue); }
+#header-style-14 .main-navigation ul li.theme-menu-selected a::after { content:""; position:absolute; bottom:10px; left:10%; right:10%; height:2px; background:linear-gradient(to right, transparent, var(--electric-blue), transparent); opacity:.7; filter:blur(1px); }
+#header-style-14 .main-navigation ul li.theme-menu-selected a::before { content:""; position:absolute; top:10px; left:15%; right:15%; height:1px; background:linear-gradient(to right, transparent, rgba(255,255,255,.5), transparent); opacity:.6; }
+
+/* --- Style 15: "Inset Glow & Border Accent" Active Tab --- */
+#header-style-15 {
+    background-color: var(--muted-bg); padding: 0 2%; border-bottom: 1px solid #E0E7E5;
+}
+#header-style-15 .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; height: 75px; }
+#header-style-15 .logo-area img { max-height: 50px; width: auto; display: block; }
+#header-style-15 .main-navigation ul { list-style: none; padding: 0; margin: 0; display: flex; }
+#header-style-15 .main-navigation ul li a { display: block; padding: 25px 20px; margin: 0 4px; color: var(--charcoal-text); text-decoration: none; font-weight: 500; font-size: 1.0em; position: relative; border-radius: 6px; transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; border-left: 3px solid transparent; border-right: 3px solid transparent; }
+#header-style-15 .main-navigation ul li a:hover { color: var(--active-teal); background-color: rgba(20, 184, 166, 0.05); }
+#header-style-15 .main-navigation ul li.theme-menu-selected a { color: var(--active-teal); font-weight: 700; background-color: var(--pure-white); box-shadow: inset 0 0 10px var(--inset-shadow-color), inset 0 2px 5px rgba(20, 184, 166, 0.2); border-left-color: var(--active-teal); padding-left: calc(20px - 3px); }
+
+/* --- Style 16: "Layered Shadow & Gradient Line" Active Tab --- */
+#header-style-16 {
+    --active-gradient-start: #6A11CB; --active-gradient-end: #2575FC; --header-bg: var(--pure-white);
+    --subtle-shadow: rgba(0, 0, 0, 0.06); --stronger-shadow: rgba(0, 0, 0, 0.12);
+    background-color: var(--header-bg); padding: 0 2%; box-shadow: 0 2px 4px var(--subtle-shadow);
+}
+#header-style-16 .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; height: 80px; }
+#header-style-16 .logo-area img { max-height: 50px; width: auto; display: block; }
+#header-style-16 .main-navigation ul { list-style: none; padding: 0; margin: 0; display: flex; }
+#header-style-16 .main-navigation ul li { position: relative; margin: 0 2px; }
+#header-style-16 .main-navigation ul li a { display: block; padding: 28px 18px; color: var(--g-text-color); text-decoration: none; font-weight: 500; transition: color 0.3s ease, transform 0.2s ease; position: relative; border-radius: 5px; }
+#header-style-16 .main-navigation ul li a:hover { color: var(--active-gradient-start); transform: translateY(-2px); }
+#header-style-16 .main-navigation ul li.theme-menu-selected a { color: var(--active-gradient-start); font-weight: 700; background-color: #f8f9fa; box-shadow: 0 4px 8px var(--stronger-shadow), 0 2px 4px var(--subtle-shadow); transform: translateY(-3px); border-radius: 5px 5px 0 0; }
+#header-style-16 .main-navigation ul li.theme-menu-selected::after { content: ""; position: absolute; bottom: -1px; left: 0; right: 0; height: 4px; background: linear-gradient(to right, var(--active-gradient-start), var(--active-gradient-end)); border-radius: 0 0 3px 3px; }
+
+/* --- Style 17: "Deep Ocean Glow" Active Tab --- */
+#header-style-17 {
+    --light-text-op: rgba(255, 255, 255, 0.7);
+    background: linear-gradient(to right, var(--deep-ocean-start), var(--deep-ocean-end)); padding: 0 2%; box-shadow: 0 3px 10px rgba(0,0,0,0.2); position:relative; /* For ::before */
+}
+#header-style-17::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.2), rgba(255,255,255,0)); opacity: 0.5; }
+#header-style-17 .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; height: 75px; }
+#header-style-17 .logo-area img { max-height: 45px; width: auto; display: block; filter: brightness(0) invert(1); }
+#header-style-17 .main-navigation ul { list-style: none; padding: 0; margin: 0; display: flex; }
+#header-style-17 .main-navigation ul li a { display: block; padding: 26px 20px; margin: 0 1px; color: var(--light-text-op); text-decoration: none; font-weight: 500; font-size: 1.05em; position: relative; transition: color 0.3s ease, text-shadow 0.3s ease, border-bottom-color 0.3s ease; border-bottom: 2px solid transparent; }
+#header-style-17 .main-navigation ul li a:hover { color: var(--pure-white); border-bottom-color: var(--gold-accent); }
+#header-style-17 .main-navigation ul li.theme-menu-selected a { color: var(--gold-accent); font-weight: 700; text-shadow: 0 0 8px var(--gold-accent), 0 0 15px var(--soft-glow), 0 0 20px rgba(255,255,255,0.1); border-bottom-color: var(--gold-accent); }
