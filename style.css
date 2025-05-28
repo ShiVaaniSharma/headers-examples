@@ -20,11 +20,11 @@ body {
 .showcase-section h2 {
     /* background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%); -- REMOVED */
     /* color: #ffffff; -- REMOVED, will inherit from body or be black */
-    padding: 15px 20px; /* Reduced padding for plain text */
-    margin: 0 0 15px 0; /* Add some bottom margin to separate from header */
-    font-size: 1.3em;   /* Slightly smaller for plain text */
+    padding: 15px 20px; 
+    margin: 0 0 15px 0; 
+    font-size: 1.3em;  
     font-weight: 600;
-    text-align: center; /* Center the title above the header */
+    text-align: center;
     font-family: 'Poppins', sans-serif;
     /* border-bottom: none; -- REMOVED */
 }
@@ -46,10 +46,8 @@ body {
     --g-primary-blue: #007bff; --g-dark-blue: #004a99; --g-light-blue: #e7f3ff;
     --g-accent-blue: #2a9fd6; --g-text-color: #333333; --g-light-text: #ffffff;
     --g-border-color: #e0e0e0;
-    /* Modern Palette */
     --sharp-blue: #0052D4; --electric-blue: #00C6FF; --vibrant-accent: #FF416C;
     --graphite: #2D3748; --silver-lining: #E2E8F0; --pure-white: #FFFFFF;
-    /* New Palette additions for Styles 15-17 */
     --deep-ocean-start: #000428; --deep-ocean-end: #004E92; --gold-accent: #FFD700;
     --soft-glow: rgba(255, 215, 0, 0.3); --muted-bg: #F4F7F6; --charcoal-text: #36454F;
     --active-teal: #14B8A6; --inset-shadow-color: rgba(0, 0, 0, 0.1);
